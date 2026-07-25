@@ -369,13 +369,23 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
 <img src="cat1.gif" class="cat1" alt="Little Cat">
 <img src="giphy (2).gif" class="kiki-fly" alt="Kiki Flying">
 <img src="giphy.gif" class="kiki-fly" alt="Kiki Flying">
-<!-- Floating Music Player -->
+
+<!-- Floating Music Player with Song Selector -->
 <div class="music-player">
     <img src="fogo.gif" class="fire" alt="Fire">
     <h3 style="font-size: 16px; color: #ccefc3;">🎵 A Song For You</h3>
     <p style="font-size: 13px; color: #bbb; margin-top: 3px;">Click play whenever you feel like listening ❤️</p>
-    <audio controls loop preload="metadata" style="width:100%; margin-top:12px; height: 32px;">
-        <source src="untilifoundyou.mp3" type="audio/mpeg">
+    
+    <!-- Song Dropdown Selection -->
+    <select id="songSelect" onchange="changeSong(this.value)" style="width: 100%; margin-top: 8px; padding: 6px 10px; background: rgba(0,0,0,0.4); color: #e2f9dd; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; font-family: 'Quicksand', sans-serif; font-size: 13px; outline: none; cursor: pointer;">
+        <option value="untilifoundyou.mp3">1. Until I Found You 💖</option>
+        <option value="maafi.mp3">2. jab bhi gussa aye, please maafi 🌿</option>
+        <option value="night_changes.mp3">3. your fav. 🌿</option>
+        <option value="jeena_jeena.mp3">4. jeena_jeena 🌿</option>
+    </select>
+
+    <audio id="mainAudio" controls loop preload="metadata" style="width:100%; margin-top:12px; height: 32px;">
+        <source id="audioSource" src="untilifoundyou.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 </div>
@@ -456,7 +466,7 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
                 <div class="polaroid-front"><img src="photo7.jpg" alt="Moment 2"></div>
                 <div class="polaroid-back">
                     <h3>it start with this</h3>
-                    <p>you didn't know me that time.</p>
+                    <p>you didn't know me that timen</p>
                 </div>
             </div>
         </div>
@@ -510,6 +520,20 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
 </footer>
 
 <script>
+// Function to switch songs when selected in the dropdown menu
+function changeSong(filename) {
+    const audio = document.getElementById('mainAudio');
+    const source = document.getElementById('audioSource');
+    const isPlaying = !audio.paused;
+
+    source.src = filename;
+    audio.load();
+    
+    if (isPlaying) {
+        audio.play();
+    }
+}
+
 // Typing effect
 const txt="Some people love sunsets... some love flowers... I think I started loving both because they remind me of you.";
 let i=0;
