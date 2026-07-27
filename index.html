@@ -236,6 +236,29 @@ p { line-height: 2; font-size: 18px; color: #e0eee0; }
 
 .hidden { display: none; }
 
+    /* Video Section Styling */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 25px auto 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(112, 214, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    aspect-ratio: 16 / 9;
+}
+
+.video-container video, 
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    display: block;
+}
+
 /* Memory Card */
 .memory-card {
     display: flex;
