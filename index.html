@@ -259,6 +259,27 @@ p { line-height: 2; font-size: 18px; color: #e0eee0; }
     display: block;
 }
 
+/* Open When Letters Section */
+details {
+  margin-bottom: 15px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.25);
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+details[open] {
+  background: rgba(255, 45, 117, 0.15);
+  border-color: rgba(255, 117, 160, 0.5);
+}
+summary {
+  font-weight: bold;
+  color: #ff75a0;
+  font-size: 18px;
+  outline: none;
+}
+
 /* Memory Card */
 .memory-card {
     display: flex;
