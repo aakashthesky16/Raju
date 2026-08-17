@@ -280,7 +280,6 @@ summary {
   outline: none;
 }
 
-
 /* Memory Card */
 .memory-card {
     display: flex;
@@ -382,115 +381,6 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
 
 .pass-btn:hover { background: #5b925b; }
 #error-msg { color: #ff9e9e; font-size: 14px; margin-top: 12px; display: none; }
-
-/* Guestbook / Voice Note Section */
-.guestbook-wrap {
-    text-align: center;
-}
-
-.guestbook-sub {
-    font-size: 15px;
-    color: #b9d8b4;
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-.note-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    max-width: 480px;
-    margin: 0 auto 40px auto;
-}
-
-.note-form input,
-.note-form textarea {
-    width: 100%;
-    padding: 14px 18px;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.25);
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
-    outline: none;
-    resize: none;
-    transition: border-color 0.3s;
-}
-
-.note-form input:focus,
-.note-form textarea:focus {
-    border-color: rgba(186, 245, 175, 0.6);
-}
-
-.note-form textarea {
-    min-height: 90px;
-}
-
-.note-form button {
-    align-self: center;
-    margin-top: 4px;
-}
-
-.note-board {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    text-align: left;
-}
-
-.note-card {
-    position: relative;
-    background: rgba(255, 253, 240, 0.95);
-    color: #3a3a2f;
-    padding: 22px 20px 18px 20px;
-    border-radius: 4px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.03);
-    transform: rotate(var(--tilt, -2deg));
-    font-family: 'Quicksand', sans-serif;
-    animation: pinDrop 0.5s ease;
-}
-
-@keyframes pinDrop {
-    from { opacity: 0; transform: translateY(-15px) rotate(var(--tilt, -2deg)); }
-    to { opacity: 1; transform: translateY(0) rotate(var(--tilt, -2deg)); }
-}
-
-.note-card::before {
-    content: "📌";
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-}
-
-.note-card .note-name {
-    font-family: 'Caveat', cursive;
-    font-size: 24px;
-    color: #4a7a45;
-    margin-bottom: 6px;
-}
-
-.note-card .note-msg {
-    font-size: 14px;
-    line-height: 1.55;
-    color: #3a3a2f;
-}
-
-.note-card .note-time {
-    display: block;
-    margin-top: 10px;
-    font-size: 11px;
-    color: #8a8a7a;
-}
-
-.note-empty {
-    color: #a9c7a5;
-    font-size: 15px;
-    font-style: italic;
-    padding: 20px;
-}
 </style>
 </head>
 <body>
@@ -511,10 +401,10 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
 <div id="password-overlay">
   <div class="pass-card">
     <h2>🔒 A Little Lock</h2>
-    <p>Enter the special date to enter (DDMMYY) 🌿</p>
+    <p>Enter the special date to enter 🌿</p>
     <input type="password" id="passInput" class="pass-input" placeholder="••••••" maxlength="6" onkeydown="if(event.key==='Enter') checkPassword()">
     <button onclick="checkPassword()" class="pass-btn">Unlock Corner ✨</button>
-    <p id="error-msg">Oops! Wrong code. Try again! 🌸</p>
+    <p id="error-msg">Oops! yaad karo. and Try again! 🌸</p>
   </div>
 </div>
 
@@ -530,7 +420,7 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
     <h3 style="font-size: 16px; color: #ccefc3;">🎵 A Song For You</h3>
     <p style="font-size: 13px; color: #bbb; margin-top: 3px;">Click play whenever you feel like listening ❤️</p>
     
-     <!-- Song Dropdown Selection -->
+    <!-- Song Dropdown Selection -->
     <select id="songSelect" onchange="changeSong(this.value)" style="width: 100%; margin-top: 8px; padding: 6px 10px; background: rgba(0,0,0,0.4); color: #e2f9dd; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; font-family: 'Quicksand', sans-serif; font-size: 13px; outline: none; cursor: pointer;">
         <option value="untilifoundyou.mp3">1. Until I Found You 💖</option>
         <option value="maafi.mp3">2. jab bhi gussa aye, please maafi 🌿</option>
@@ -538,7 +428,6 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
         <option value="night_changes.mp3">4. your fav. 🌿</option>
         <option value="jeena_jeena.mp3">5. jeena_jeena 🌿</option>
     </select>
-
 
     <audio id="mainAudio" controls loop preload="metadata" style="width:100%; margin-top:12px; height: 32px;">
         <source id="audioSource" src="untilifoundyou.mp3" type="audio/mpeg">
@@ -649,7 +538,7 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
     </div>
 </section>
 
- <!-- ==================== VIDEO SECTION ==================== -->
+    <!-- ==================== VIDEO SECTION ==================== -->
 <section class="glass" style="text-align: center;">
     <h2>🎬 apart by distance only </h2>
     <p style="font-size: 15px; color: #cbd5e1; margin-bottom: 10px;">
@@ -711,23 +600,6 @@ footer { text-align: center; padding: 50px 20px; color: #b0cbaf; font-size: 16px
 <section class="glass" style="text-align: center;">
     <h2>🌸 07 October 2001 🌸</h2>
     <p>Some dates quietly become part of beautiful stories. I hope every new chapter of your journey brings you peace, growth, laughter, and countless moments that make you smile.</p>
-</section>
-
-<!-- Guestbook / Voice Note Section -->
-<section class="glass guestbook-wrap">
-    <h2>🕊️ Leave a Little Note</h2>
-    <p class="guestbook-sub">
-        Pin a small message on the corkboard — a memory, a wish,<br>
-        anything you feel like leaving behind here. 🌿
-    </p>
-
-    <div class="note-form">
-        <input type="text" id="noteName" placeholder="Your name (or a nickname) 🌱" maxlength="30">
-        <textarea id="noteMsg" placeholder="Write your little note here..." maxlength="300"></textarea>
-        <button onclick="addNote()">Pin It 📌</button>
-    </div>
-
-    <div class="note-board" id="noteBoard"></div>
 </section>
 
 <div class="hug">
@@ -870,88 +742,6 @@ function animateBackground() {
 }
 
 animateBackground();
-
-// ===== Guestbook / Voice Note Board =====
-const NOTES_KEY = 'lilly_corner_notes';
-
-function loadNotes() {
-    try {
-        const raw = localStorage.getItem(NOTES_KEY);
-        return raw ? JSON.parse(raw) : [];
-    } catch (e) {
-        return [];
-    }
-}
-
-function saveNotes(notes) {
-    try {
-        localStorage.setItem(NOTES_KEY, JSON.stringify(notes));
-    } catch (e) {
-        console.error('Could not save notes:', e);
-    }
-}
-
-function renderNotes() {
-    const board = document.getElementById('noteBoard');
-    const notes = loadNotes();
-
-    if (notes.length === 0) {
-        board.innerHTML = '<p class="note-empty">No notes pinned yet... be the first to leave one 🌿</p>';
-        return;
-    }
-
-    board.innerHTML = notes
-        .slice()
-        .reverse()
-        .map(note => {
-            const tilt = (Math.random() * 6 - 3).toFixed(1);
-            const safeName = escapeHtml(note.name || 'Someone sweet');
-            const safeMsg = escapeHtml(note.msg).replace(/\n/g, '<br>');
-            return `
-                <div class="note-card" style="--tilt:${tilt}deg;">
-                    <div class="note-name">${safeName}</div>
-                    <div class="note-msg">${safeMsg}</div>
-                    <span class="note-time">${note.date}</span>
-                </div>
-            `;
-        })
-        .join('');
-}
-
-function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-}
-
-function addNote() {
-    const nameInput = document.getElementById('noteName');
-    const msgInput = document.getElementById('noteMsg');
-
-    const name = nameInput.value.trim();
-    const msg = msgInput.value.trim();
-
-    if (!msg) {
-        msgInput.style.borderColor = 'rgba(255, 158, 158, 0.7)';
-        setTimeout(() => { msgInput.style.borderColor = 'rgba(255,255,255,0.2)'; }, 1200);
-        return;
-    }
-
-    const notes = loadNotes();
-    notes.push({
-        name: name || 'Someone sweet',
-        msg: msg,
-        date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
-    });
-    saveNotes(notes);
-
-    nameInput.value = '';
-    msgInput.value = '';
-
-    renderNotes();
-}
-
-renderNotes();
 </script>
 </body>
 </html>
